@@ -1,3 +1,5 @@
+using ImageFiltering
+
 function blur(A)
     for i in CartesianIndices(A)
         if i[1]+1 > size(A,1) || i[2]+1 > size(A,2)
@@ -36,4 +38,12 @@ function blur(A, n)
         end
     end
 return A
+end
+
+function Base.max(cd1::RGB{Float64}, cd2::RGB{Float64})
+    if cd1.r >= cd2.r
+        return cd1
+    else
+        return cd2
+    end
 end

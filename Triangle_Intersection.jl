@@ -42,8 +42,8 @@ function TriangleIntersection(triangle, ray)
 end
 
 function TriangleIntersection(triangle, ray, farclip)
-    ray.direction = ray.direction * farclip
-    ϵ = 0.00001
+    ray.direction = (ray.direction-ray.origin)*farclip
+    ϵ = 0.0001
     v0 = triangle.v0; v1 = triangle.v1; v2 = triangle.v2
     edge1 = [0.0,0.0,0.0]; edge2 = [0.0,0.0,0.0]; h = [0.0,0.0,0.0]; s = [0.0,0.0,0.0]; q = [0.0,0.0,0.0]
     a = 0.0; f = 0.0; u = 0.0; v = 0.0
