@@ -67,7 +67,12 @@ function TriangleIntersection(triangle, ray, farclip)
     end
     t = f * dot(q, edge2)
     if t > ϵ
-        return true
+
+        intersectPoint = ray.origin + ray.direction*t
+        dist = float(length(intersectPoint - ray.origin))
+
+        Nn = normalize(cross(edge1, edge2))
+        return true, dist, intersectPoint, Nn
     end
     return false
 end
