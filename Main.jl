@@ -45,5 +45,6 @@ for f in mesh
     end
 end
 img = B
+img = reverse(img, dims=1)
 imshow(img, aspect="auto")
 
